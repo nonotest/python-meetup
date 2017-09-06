@@ -1,0 +1,13 @@
+# network
+docker network create --driver bridge pymeetup_nw
+
+# BUILD
+cd django
+docker build -t pymeetup-django:latest .
+
+# RUN
+docker run --network=pymeetup_nw -d -p 127.0.0.1:8000:8000 --name=pymeetup-django pymeetup-django:latest
+docker exec -i -t pymeetup-django /bin/ash
+
+# CLEANUP
+docker kill pymeetup-django && docker rm pymeetup-django

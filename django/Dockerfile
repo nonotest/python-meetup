@@ -1,10 +1,15 @@
 FROM python:alpine3.6
 
-COPY requirements.txt ./
-RUN pip install -r requirements.txt
+# Setup our app
+COPY app /usr/src/app
 WORKDIR /usr/src/app
-COPY app .
+RUN cat immutableisgood/views.py
 
+RUN pip install -r requirements.txt
+
+
+
+# Start the server
 EXPOSE 8000
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
