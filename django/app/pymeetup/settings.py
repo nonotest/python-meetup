@@ -25,7 +25,7 @@ SECRET_KEY = '=0dwh7e#wlm9%)tdkn^=8x7vlirp&)krnxz2rj+**vs2f)jk^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['meetupdev.bettercells.com','meetupprod.bettercells.com']
 
 
 # Application definition
